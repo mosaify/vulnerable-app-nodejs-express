@@ -1,0 +1,1430 @@
+{
+  "errors": [],
+  "interfile_languages_used": [],
+  "paths": {
+    "scanned": [
+      ".github/workflows/codeql-analysis.yml",
+      ".gitignore",
+      "Dockerfile",
+      "LICENSE",
+      "README.md",
+      "index.js",
+      "package-lock.json",
+      "package.json",
+      "scout.sarif",
+      "semgrep-oss-sast.json",
+      "views/hello.pug"
+    ]
+  },
+  "results": [
+    {
+      "check_id": "javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+      "end": {
+        "col": 2,
+        "line": 12,
+        "offset": 222
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 2,
+                  "line": 12,
+                  "offset": 222
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 25,
+                  "line": 6,
+                  "offset": 108
+                }
+              },
+              "{\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n}"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 2,
+                  "line": 12,
+                  "offset": 222
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 25,
+                  "line": 6,
+                  "offset": 108
+                }
+              },
+              "{\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n}"
+            ]
+          ]
+        },
+        "engine_kind": "PRO",
+        "fingerprint": "ed95571d88700807c7a05ed33384a55589f210b1bc4db201388c0228103cc2c407ecaa5dab34f23b76f68d709ecb78a80e16e8416037e90a1ec275af11dd16cc_0",
+        "is_ignored": false,
+        "lines": "var client = new Client({\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n})",
+        "message": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM).",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cwe": [
+            "CWE-798: Use of Hard-coded Credentials"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "MEDIUM",
+          "interfile": true,
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A07:2021 - Identification and Authentication Failures"
+          ],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 28093,
+              "rule_id": "oqUbPW",
+              "rule_name": "javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+              "rv_id": 111694,
+              "url": "https://semgrep.dev/playground/r/5PTdeWx/javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+              "version_id": "5PTdeWx"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "comment",
+          "semgrep.ruleset_id": 9381,
+          "semgrep.url": "https://semgrep.dev/r/javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+          "shortlink": "https://sg.run/RlxN",
+          "source": "https://semgrep.dev/r/javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "Sequelize",
+            "Nodejs",
+            "Secrets"
+          ],
+          "vulnerability_class": [
+            "Hard-coded Secrets"
+          ]
+        },
+        "metavars": {
+          "$FOO": {
+            "abstract_content": "{user\"postgres\"password\"mysecretpassword\"host\"localhost\"port 5432 database\"postgres\"}",
+            "end": {
+              "col": 2,
+              "line": 12,
+              "offset": 222
+            },
+            "start": {
+              "col": 25,
+              "line": 6,
+              "offset": 108
+            }
+          },
+          "$SQL": {
+            "abstract_content": "Client",
+            "end": {
+              "col": 24,
+              "line": 6,
+              "offset": 107
+            },
+            "start": {
+              "col": 18,
+              "line": 6,
+              "offset": 101
+            }
+          }
+        },
+        "severity": "WARNING",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 25,
+        "line": 6,
+        "offset": 108
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+      "end": {
+        "col": 22,
+        "line": 30,
+        "offset": 689
+      },
+      "extra": {
+        "engine_kind": "PRO",
+        "fingerprint": "b99e34bc823d648134e9f945815c4cb093ddb8f4449cba5a0143e65fd6101fc44c411a6beeb05d4f7450130e7f3722a86856e06981b994c4befc3946b4108421_0",
+        "is_ignored": false,
+        "lines": "  var app = express();",
+        "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-352: Cross-Site Request Forgery (CSRF)"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "HIGH",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A01:2021 - Broken Access Control"
+          ],
+          "references": [
+            "https://www.npmjs.com/package/csurf",
+            "https://www.npmjs.com/package/csrf",
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 22551,
+              "rule_id": "wdUKEq",
+              "rule_name": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+              "rv_id": 109832,
+              "url": "https://semgrep.dev/playground/r/5PTdAbp/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+              "version_id": "5PTdAbp"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+          "shortlink": "https://sg.run/BxzR",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "javascript",
+            "typescript",
+            "express"
+          ],
+          "vulnerability_class": [
+            "Cross-Site Request Forgery (CSRF)"
+          ]
+        },
+        "metavars": {
+          "$APP": {
+            "abstract_content": "app",
+            "end": {
+              "col": 10,
+              "line": 30,
+              "offset": 677
+            },
+            "start": {
+              "col": 7,
+              "line": 30,
+              "offset": 674
+            }
+          },
+          "$EXPRESS": {
+            "abstract_content": "express",
+            "end": {
+              "col": 20,
+              "line": 30,
+              "offset": 687
+            },
+            "start": {
+              "col": 13,
+              "line": 30,
+              "offset": 680
+            }
+          }
+        },
+        "severity": "INFO",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 7,
+        "line": 30,
+        "offset": 674
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "end": {
+        "col": 38,
+        "line": 33,
+        "offset": 771
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 38,
+                  "line": 33,
+                  "offset": 771
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 14,
+                  "line": 33,
+                  "offset": 747
+                }
+              },
+              "`Hello, ${req.query.name"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 33,
+                  "line": 33,
+                  "offset": 766
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 24,
+                  "line": 33,
+                  "offset": 757
+                }
+              },
+              "req.query"
+            ]
+          ]
+        },
+        "engine_kind": "PRO",
+        "fingerprint": "e5f1c9ce6ae2ed579490ff8d72743293d36ee07fff07df116186b86fad942176d56656381da0309683fd9c90017de7df26cc419ab92c1bd418d3cdea9bbd847f_0",
+        "is_ignored": false,
+        "lines": "    res.send(`Hello, ${req.query.name}`)",
+        "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "MEDIUM",
+          "interfile": true,
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9277,
+              "rule_id": "3qUPA1",
+              "rule_name": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "rv_id": 751090,
+              "url": "https://semgrep.dev/playground/r/qkTWwqp/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "version_id": "qkTWwqp"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+          "shortlink": "https://sg.run/vzGl",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "express"
+          ],
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "get",
+            "end": {
+              "col": 4,
+              "line": 1,
+              "offset": 3
+            },
+            "start": {
+              "col": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "$APP": {
+            "abstract_content": "app",
+            "end": {
+              "col": 6,
+              "line": 32,
+              "offset": 697
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "express()",
+              "svalue_end": {
+                "col": 22,
+                "line": 30,
+                "offset": 689
+              },
+              "svalue_start": {
+                "col": 13,
+                "line": 30,
+                "offset": 680
+              }
+            },
+            "start": {
+              "col": 3,
+              "line": 32,
+              "offset": 694
+            }
+          },
+          "$ARG": {
+            "abstract_content": "`Hello, req.query.name",
+            "end": {
+              "col": 38,
+              "line": 33,
+              "offset": 771
+            },
+            "start": {
+              "col": 14,
+              "line": 33,
+              "offset": 747
+            }
+          },
+          "$METHOD": {
+            "abstract_content": "get",
+            "end": {
+              "col": 10,
+              "line": 32,
+              "offset": 701
+            },
+            "start": {
+              "col": 7,
+              "line": 32,
+              "offset": 698
+            }
+          },
+          "$REQ": {
+            "abstract_content": "req",
+            "end": {
+              "col": 27,
+              "line": 33,
+              "offset": 760
+            },
+            "start": {
+              "col": 24,
+              "line": 33,
+              "offset": 757
+            }
+          },
+          "$RES": {
+            "abstract_content": "res",
+            "end": {
+              "col": 39,
+              "line": 32,
+              "offset": 730
+            },
+            "start": {
+              "col": 36,
+              "line": 32,
+              "offset": 727
+            }
+          }
+        },
+        "severity": "WARNING",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 14,
+        "line": 33,
+        "offset": 747
+      }
+    },
+    {
+      "check_id": "javascript.express.pg.express-pg-sqli.express-pg-sqli",
+      "end": {
+        "col": 64,
+        "line": 46,
+        "offset": 1130
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 64,
+                  "line": 46,
+                  "offset": 1130
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 37,
+                  "line": 44,
+                  "offset": 1009
+                }
+              },
+              "`select *\n                                     from users\n                                     where id = ${req.params.id"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 61,
+                  "line": 46,
+                  "offset": 1127
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 51,
+                  "line": 46,
+                  "offset": 1117
+                }
+              },
+              "req.params"
+            ]
+          ]
+        },
+        "engine_kind": "PRO",
+        "fingerprint": "a87d3f5d263a6c0ec8e25beb33f2b62e7609723b89ae220a27cf1c5c869a573696489f9a738cdb0df2d1fe5cabcc16ef13d8b524e2a8f2ad721a40127a51d370_0",
+        "is_ignored": false,
+        "lines": "      var user = await client.query(`select *\n                                     from users\n                                     where id = ${req.params.id}`)",
+        "message": "Untrusted input might be used to build a database query, which can lead to a SQL injection vulnerability. An attacker can execute malicious SQL statements and gain unauthorized access to sensitive data, modify, delete data, or execute arbitrary system commands. To prevent this vulnerability, use prepared statements that do not concatenate user-controllable strings and use parameterized queries where SQL commands and user data are strictly separated. Also, consider using an object-relational (ORM) framework to operate with safer abstractions.",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "functional-categories": [
+            "web::source::cookie::express",
+            "web::source::http-params::express",
+            "web::source::http-body::express",
+            "web::source::header::express",
+            "web::source::url-path-params::express",
+            "db::sink::sql-or-nosql-query::pg"
+          ],
+          "impact": "HIGH",
+          "interfile": true,
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://www.npmjs.com/package/pg",
+            "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 28088,
+              "rule_id": "KxUKRg",
+              "rule_name": "javascript.express.pg.express-pg-sqli.express-pg-sqli",
+              "rv_id": 111671,
+              "url": "https://semgrep.dev/playground/r/yeTRZ8w/javascript.express.pg.express-pg-sqli.express-pg-sqli",
+              "version_id": "yeTRZ8w"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "comment",
+          "semgrep.ruleset_id": 9381,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.pg.express-pg-sqli.express-pg-sqli",
+          "shortlink": "https://sg.run/4Ko9",
+          "source": "https://semgrep.dev/r/javascript.express.pg.express-pg-sqli.express-pg-sqli",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "pg",
+            "express",
+            "nodejs"
+          ],
+          "vulnerability_class": [
+            "SQL Injection"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "get",
+            "end": {
+              "col": 4,
+              "line": 1,
+              "offset": 3
+            },
+            "start": {
+              "col": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "$APP": {
+            "abstract_content": "app",
+            "end": {
+              "col": 6,
+              "line": 42,
+              "offset": 917
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "express()",
+              "svalue_end": {
+                "col": 22,
+                "line": 30,
+                "offset": 689
+              },
+              "svalue_start": {
+                "col": 13,
+                "line": 30,
+                "offset": 680
+              }
+            },
+            "start": {
+              "col": 3,
+              "line": 42,
+              "offset": 914
+            }
+          },
+          "$METHOD": {
+            "abstract_content": "get",
+            "end": {
+              "col": 10,
+              "line": 42,
+              "offset": 921
+            },
+            "start": {
+              "col": 7,
+              "line": 42,
+              "offset": 918
+            }
+          },
+          "$POOL": {
+            "abstract_content": "client",
+            "end": {
+              "col": 30,
+              "line": 44,
+              "offset": 1002
+            },
+            "start": {
+              "col": 24,
+              "line": 44,
+              "offset": 996
+            }
+          },
+          "$QUERY": {
+            "abstract_content": "`select *\n                                     from users\n                                     where id = req.params.id",
+            "end": {
+              "col": 64,
+              "line": 46,
+              "offset": 1130
+            },
+            "start": {
+              "col": 37,
+              "line": 44,
+              "offset": 1009
+            }
+          },
+          "$REQ": {
+            "abstract_content": "req",
+            "end": {
+              "col": 54,
+              "line": 46,
+              "offset": 1120
+            },
+            "start": {
+              "col": 51,
+              "line": 46,
+              "offset": 1117
+            }
+          },
+          "$RES": {
+            "abstract_content": "res",
+            "end": {
+              "col": 48,
+              "line": 42,
+              "offset": 959
+            },
+            "start": {
+              "col": 45,
+              "line": 42,
+              "offset": 956
+            }
+          },
+          "$S": {
+            "abstract_content": "Client",
+            "end": {
+              "col": 24,
+              "line": 6,
+              "offset": 107
+            },
+            "start": {
+              "col": 18,
+              "line": 6,
+              "offset": 101
+            }
+          }
+        },
+        "severity": "WARNING",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 37,
+        "line": 44,
+        "offset": 1009
+      }
+    },
+    {
+      "check_id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+      "end": {
+        "col": 64,
+        "line": 46,
+        "offset": 1130
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 64,
+                  "line": 46,
+                  "offset": 1130
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 51,
+                  "line": 46,
+                  "offset": 1117
+                }
+              },
+              "req.params.id"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 61,
+                  "line": 46,
+                  "offset": 1127
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 51,
+                  "line": 46,
+                  "offset": 1117
+                }
+              },
+              "req.params"
+            ]
+          ]
+        },
+        "engine_kind": "PRO",
+        "fingerprint": "ca37d46576b2a9de501885f107e02c77dc8a66c409820dc241b2a836458b31a641a0bddf2d529870ceec6b2fa81e06d6737eea945a4d7b92dfd329b1a3555e0f_0",
+        "is_ignored": false,
+        "lines": "                                     where id = ${req.params.id}`)",
+        "message": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "HIGH",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/www-community/attacks/SQL_Injection"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 14715,
+              "rule_id": "NbUNpr",
+              "rule_name": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+              "rv_id": 751091,
+              "url": "https://semgrep.dev/playground/r/l4TWDPx/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+              "version_id": "l4TWDPx"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+          "shortlink": "https://sg.run/66ZL",
+          "source": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "express"
+          ],
+          "vulnerability_class": [
+            "SQL Injection"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "select",
+            "end": {
+              "col": 7,
+              "line": 1,
+              "offset": 6
+            },
+            "start": {
+              "col": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "$EXPR": {
+            "abstract_content": "req.params.id",
+            "end": {
+              "col": 64,
+              "line": 46,
+              "offset": 1130
+            },
+            "start": {
+              "col": 51,
+              "line": 46,
+              "offset": 1117
+            }
+          },
+          "$REQ": {
+            "abstract_content": "req",
+            "end": {
+              "col": 54,
+              "line": 46,
+              "offset": 1120
+            },
+            "start": {
+              "col": 51,
+              "line": 46,
+              "offset": 1117
+            }
+          },
+          "$SQLSTR": {
+            "abstract_content": "select *\n                                     from users\n                                     where id = ",
+            "end": {
+              "col": 49,
+              "line": 46,
+              "offset": 1115
+            },
+            "start": {
+              "col": 38,
+              "line": 44,
+              "offset": 1010
+            }
+          }
+        },
+        "severity": "ERROR",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 51,
+        "line": 46,
+        "offset": 1117
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+      "end": {
+        "col": 28,
+        "line": 47,
+        "offset": 1161
+      },
+      "extra": {
+        "dataflow_trace": {
+          "intermediate_vars": [
+            {
+              "content": "user",
+              "location": {
+                "end": {
+                  "col": 15,
+                  "line": 44,
+                  "offset": 987
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 11,
+                  "line": 44,
+                  "offset": 983
+                }
+              }
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 28,
+                  "line": 47,
+                  "offset": 1161
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 16,
+                  "line": 47,
+                  "offset": 1149
+                }
+              },
+              "user.rows[0]"
+            ]
+          ],
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "end": {
+                  "col": 61,
+                  "line": 46,
+                  "offset": 1127
+                },
+                "path": "index.js",
+                "start": {
+                  "col": 51,
+                  "line": 46,
+                  "offset": 1117
+                }
+              },
+              "req.params"
+            ]
+          ]
+        },
+        "engine_kind": "PRO",
+        "fingerprint": "4fb5f6d7f53cb0911a20a44911d367bcd54371f1a134eec8517970dd0f58e2d3b0371748045c9b6856dfa53900282bb709882fb694b59c4d6e0047fbec3bb4d1_0",
+        "is_ignored": false,
+        "lines": "      res.send(user.rows[0]);",
+        "message": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.",
+        "metadata": {
+          "category": "security",
+          "confidence": "MEDIUM",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "MEDIUM",
+          "interfile": true,
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "MEDIUM",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9277,
+              "rule_id": "3qUPA1",
+              "rule_name": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "rv_id": 751090,
+              "url": "https://semgrep.dev/playground/r/qkTWwqp/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "version_id": "qkTWwqp"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+          "shortlink": "https://sg.run/vzGl",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+          "subcategory": [
+            "vuln"
+          ],
+          "technology": [
+            "express"
+          ],
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "get",
+            "end": {
+              "col": 4,
+              "line": 1,
+              "offset": 3
+            },
+            "start": {
+              "col": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "$APP": {
+            "abstract_content": "app",
+            "end": {
+              "col": 6,
+              "line": 42,
+              "offset": 917
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "express()",
+              "svalue_end": {
+                "col": 22,
+                "line": 30,
+                "offset": 689
+              },
+              "svalue_start": {
+                "col": 13,
+                "line": 30,
+                "offset": 680
+              }
+            },
+            "start": {
+              "col": 3,
+              "line": 42,
+              "offset": 914
+            }
+          },
+          "$ARG": {
+            "abstract_content": "user.rows[0]",
+            "end": {
+              "col": 28,
+              "line": 47,
+              "offset": 1161
+            },
+            "start": {
+              "col": 16,
+              "line": 47,
+              "offset": 1149
+            }
+          },
+          "$METHOD": {
+            "abstract_content": "get",
+            "end": {
+              "col": 10,
+              "line": 42,
+              "offset": 921
+            },
+            "start": {
+              "col": 7,
+              "line": 42,
+              "offset": 918
+            }
+          },
+          "$REQ": {
+            "abstract_content": "req",
+            "end": {
+              "col": 54,
+              "line": 46,
+              "offset": 1120
+            },
+            "start": {
+              "col": 51,
+              "line": 46,
+              "offset": 1117
+            }
+          },
+          "$RES": {
+            "abstract_content": "res",
+            "end": {
+              "col": 48,
+              "line": 42,
+              "offset": 959
+            },
+            "start": {
+              "col": 45,
+              "line": 42,
+              "offset": 956
+            }
+          }
+        },
+        "severity": "WARNING",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "index.js",
+      "start": {
+        "col": 16,
+        "line": 47,
+        "offset": 1149
+      }
+    },
+    {
+      "check_id": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+      "end": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "0b781a906568ea11daf4751d0c37321e83cb3ea5be44f2c2601923b289b3ec094d3dcd6b616e19467d23e1461ebe72f750969f0784d7e201de6e32c02b3b0a68_0",
+        "is_ignored": false,
+        "lines": "    \"node_modules/lodash\": {",
+        "message": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity.",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cve": "CVE-2020-28500",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "dev.semgrep.actions": [],
+          "ghsa": "GHSA-29mw-wpgm-hmr9",
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-01-06T20:30:46Z",
+          "references": [
+            "https://github.com/advisories/GHSA-29mw-wpgm-hmr9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-28500"
+          ],
+          "sca-fix-versions": [
+            {
+              "lodash-es": "4.17.21"
+            },
+            {
+              "lodash": "4.17.21"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2020-28500",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94917,
+              "rule_id": "ZqUQqQl",
+              "rv_id": 261326,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "version_id": "gETA69k"
+            }
+          },
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+          "technology": [
+            "js",
+            "ts"
+          ],
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ]
+        },
+        "metavars": {},
+        "sca_info": {
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "npm",
+              "package": "lodash",
+              "semver_range": "< 4.17.21"
+            },
+            "found_dependency": {
+              "allowed_hashes": {
+                "sha512": [
+                  "3e585d15c8a594e20d7de57b362ea81754c011acb2641a19f1b72c8531ea39825896bab344ae616a0a5a824cb9a381df0b3cddd534645cf305aba70a93dac698"
+                ]
+              },
+              "ecosystem": "npm",
+              "line_number": 558,
+              "package": "lodash",
+              "resolved_url": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+              "transitivity": "direct",
+              "version": "4.17.20"
+            },
+            "lockfile": "package-lock.json"
+          },
+          "reachability_rule": true,
+          "reachable": false,
+          "sca_finding_schema": 20220913
+        },
+        "severity": "ERROR"
+      },
+      "path": "package-lock.json",
+      "start": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      }
+    },
+    {
+      "check_id": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+      "end": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "66ce2a764b85160ce147d4b649617992e852159bf0cd5cddced34a5b9340623937c4c5e931ae999faa96716c0937b1d57104d0675427523c41a1c572fb55f0bc_0",
+        "is_ignored": false,
+        "lines": "    \"node_modules/lodash\": {",
+        "message": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cve": "CVE-2021-23337",
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "dev.semgrep.actions": [],
+          "ghsa": "GHSA-35jh-r3h4-6jhm",
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "patch-diff": "https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c",
+          "publish-date": "2021-05-06T16:05:51Z",
+          "references": [
+            "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-23337"
+          ],
+          "sca-fix-versions": [
+            {
+              "lodash-es": "4.17.21"
+            },
+            {
+              "lodash": "4.17.21"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-legacy-identifier": "lodash-command-injection-template",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-23337",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94909,
+              "rule_id": "NbU3A33",
+              "rv_id": 740888,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "version_id": "K3T5EEg"
+            }
+          },
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+          "technology": [
+            "js",
+            "ts"
+          ],
+          "vulnerability_class": [
+            "Command Injection"
+          ]
+        },
+        "metavars": {},
+        "sca_info": {
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "npm",
+              "package": "lodash",
+              "semver_range": "< 4.17.21"
+            },
+            "found_dependency": {
+              "allowed_hashes": {
+                "sha512": [
+                  "3e585d15c8a594e20d7de57b362ea81754c011acb2641a19f1b72c8531ea39825896bab344ae616a0a5a824cb9a381df0b3cddd534645cf305aba70a93dac698"
+                ]
+              },
+              "ecosystem": "npm",
+              "line_number": 558,
+              "package": "lodash",
+              "resolved_url": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+              "transitivity": "direct",
+              "version": "4.17.20"
+            },
+            "lockfile": "package-lock.json"
+          },
+          "reachability_rule": true,
+          "reachable": false,
+          "sca_finding_schema": 20220913
+        },
+        "severity": "ERROR"
+      },
+      "path": "package-lock.json",
+      "start": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      }
+    },
+    {
+      "check_id": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+      "end": {
+        "col": 29,
+        "line": 5,
+        "offset": 71
+      },
+      "extra": {
+        "engine_kind": "PRO",
+        "fingerprint": "06cc9dd3aee6c39a4c5cddb9ec853c630d451ec15947d96dbd382269688ec9f0a9d02469ed9528fb56173292135d880d01d3085736cd84886ef150c3e96eeff5_0",
+        "is_ignored": false,
+        "lines": "        p!= 'Hello, ' + name",
+        "message": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "dev.semgrep.actions": [
+            "monitor"
+          ],
+          "impact": "MEDIUM",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A07:2017 - Cross-Site Scripting (XSS)",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://pugjs.org/language/code.html#unescaped-buffered-code",
+            "https://pugjs.org/language/attributes.html#unescaped-attributes"
+          ],
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 9287,
+              "rule_id": "WAUonl",
+              "rule_name": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+              "rv_id": 109864,
+              "url": "https://semgrep.dev/playground/r/ZRTQNoL/javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+              "version_id": "ZRTQNoL"
+            },
+            "src": "new-rule"
+          },
+          "semgrep.policy": {
+            "id": 114028,
+            "name": "Rule Board - Audit column",
+            "slug": "rule-board-audit"
+          },
+          "semgrep.ruleset": "default",
+          "semgrep.ruleset_id": 3471,
+          "semgrep.url": "https://semgrep.dev/r/javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+          "shortlink": "https://sg.run/3xbe",
+          "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "express"
+          ],
+          "vulnerability_class": [
+            "Cross-Site-Scripting (XSS)"
+          ]
+        },
+        "metavars": {
+          "$1": {
+            "abstract_content": "!=",
+            "end": {
+              "col": 12,
+              "line": 5,
+              "offset": 54
+            },
+            "start": {
+              "col": 10,
+              "line": 5,
+              "offset": 52
+            }
+          }
+        },
+        "severity": "WARNING",
+        "validation_state": "NO_VALIDATOR"
+      },
+      "path": "views/hello.pug",
+      "start": {
+        "col": 9,
+        "line": 5,
+        "offset": 51
+      }
+    }
+  ],
+  "skipped_rules": [],
+  "version": "1.71.0"
+}

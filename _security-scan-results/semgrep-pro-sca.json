@@ -1,0 +1,228 @@
+{
+  "errors": [],
+  "interfile_languages_used": [],
+  "paths": {
+    "scanned": [
+      ".github/workflows/codeql-analysis.yml",
+      ".gitignore",
+      "Dockerfile",
+      "LICENSE",
+      "README.md",
+      "index.js",
+      "package-lock.json",
+      "package.json",
+      "scout.sarif",
+      "semgrep-oss-sast.json",
+      "semgrep-pro-sast.json",
+      "semgrep-pro-sast.sarif",
+      "views/hello.pug"
+    ]
+  },
+  "results": [
+    {
+      "check_id": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+      "end": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "0b781a906568ea11daf4751d0c37321e83cb3ea5be44f2c2601923b289b3ec094d3dcd6b616e19467d23e1461ebe72f750969f0784d7e201de6e32c02b3b0a68_0",
+        "is_ignored": false,
+        "lines": "    \"node_modules/lodash\": {",
+        "message": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity.",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cve": "CVE-2020-28500",
+          "cwe": [
+            "CWE-400: Uncontrolled Resource Consumption",
+            "CWE-1333: Inefficient Regular Expression Complexity"
+          ],
+          "dev.semgrep.actions": [],
+          "ghsa": "GHSA-29mw-wpgm-hmr9",
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "owasp": [
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "publish-date": "2022-01-06T20:30:46Z",
+          "references": [
+            "https://github.com/advisories/GHSA-29mw-wpgm-hmr9",
+            "https://nvd.nist.gov/vuln/detail/CVE-2020-28500"
+          ],
+          "sca-fix-versions": [
+            {
+              "lodash-es": "4.17.21"
+            },
+            {
+              "lodash": "4.17.21"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-schema": 20230302,
+          "sca-severity": "MODERATE",
+          "sca-vuln-database-identifier": "CVE-2020-28500",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94917,
+              "rule_id": "ZqUQqQl",
+              "rv_id": 261326,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "version_id": "gETA69k"
+            }
+          },
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+          "technology": [
+            "js",
+            "ts"
+          ],
+          "vulnerability_class": [
+            "Denial-of-Service (DoS)"
+          ]
+        },
+        "metavars": {},
+        "sca_info": {
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "npm",
+              "package": "lodash",
+              "semver_range": "< 4.17.21"
+            },
+            "found_dependency": {
+              "allowed_hashes": {
+                "sha512": [
+                  "3e585d15c8a594e20d7de57b362ea81754c011acb2641a19f1b72c8531ea39825896bab344ae616a0a5a824cb9a381df0b3cddd534645cf305aba70a93dac698"
+                ]
+              },
+              "ecosystem": "npm",
+              "line_number": 558,
+              "package": "lodash",
+              "resolved_url": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+              "transitivity": "direct",
+              "version": "4.17.20"
+            },
+            "lockfile": "package-lock.json"
+          },
+          "reachability_rule": true,
+          "reachable": false,
+          "sca_finding_schema": 20220913
+        },
+        "severity": "ERROR"
+      },
+      "path": "package-lock.json",
+      "start": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      }
+    },
+    {
+      "check_id": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+      "end": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      },
+      "extra": {
+        "engine_kind": "OSS",
+        "fingerprint": "66ce2a764b85160ce147d4b649617992e852159bf0cd5cddced34a5b9340623937c4c5e931ae999faa96716c0937b1d57104d0675427523c41a1c572fb55f0bc_0",
+        "is_ignored": false,
+        "lines": "    \"node_modules/lodash\": {",
+        "message": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n",
+        "metadata": {
+          "category": "security",
+          "confidence": "HIGH",
+          "cve": "CVE-2021-23337",
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "dev.semgrep.actions": [],
+          "ghsa": "GHSA-35jh-r3h4-6jhm",
+          "license": "Copyright 2023 Semgrep, Inc.",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A06:2021 - Vulnerable and Outdated Components"
+          ],
+          "patch-diff": "https://github.com/lodash/lodash/commit/3469357cff396a26c363f8c1b5a91dde28ba4b1c",
+          "publish-date": "2021-05-06T16:05:51Z",
+          "references": [
+            "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+            "https://nvd.nist.gov/vuln/detail/CVE-2021-23337"
+          ],
+          "sca-fix-versions": [
+            {
+              "lodash-es": "4.17.21"
+            },
+            {
+              "lodash": "4.17.21"
+            }
+          ],
+          "sca-kind": "reachable",
+          "sca-legacy-identifier": "lodash-command-injection-template",
+          "sca-schema": 20230302,
+          "sca-severity": "HIGH",
+          "sca-vuln-database-identifier": "CVE-2021-23337",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "custom",
+              "r_id": 94909,
+              "rule_id": "NbU3A33",
+              "rv_id": 740888,
+              "url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "version_id": "K3T5EEg"
+            }
+          },
+          "semgrep.url": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+          "source": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+          "technology": [
+            "js",
+            "ts"
+          ],
+          "vulnerability_class": [
+            "Command Injection"
+          ]
+        },
+        "metavars": {},
+        "sca_info": {
+          "dependency_match": {
+            "dependency_pattern": {
+              "ecosystem": "npm",
+              "package": "lodash",
+              "semver_range": "< 4.17.21"
+            },
+            "found_dependency": {
+              "allowed_hashes": {
+                "sha512": [
+                  "3e585d15c8a594e20d7de57b362ea81754c011acb2641a19f1b72c8531ea39825896bab344ae616a0a5a824cb9a381df0b3cddd534645cf305aba70a93dac698"
+                ]
+              },
+              "ecosystem": "npm",
+              "line_number": 558,
+              "package": "lodash",
+              "resolved_url": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+              "transitivity": "direct",
+              "version": "4.17.20"
+            },
+            "lockfile": "package-lock.json"
+          },
+          "reachability_rule": true,
+          "reachable": false,
+          "sca_finding_schema": 20220913
+        },
+        "severity": "ERROR"
+      },
+      "path": "package-lock.json",
+      "start": {
+        "col": 1,
+        "line": 558,
+        "offset": 1
+      }
+    }
+  ],
+  "skipped_rules": [],
+  "version": "1.71.0"
+}

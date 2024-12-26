@@ -1,0 +1,143 @@
+{
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
+        }
+      ],
+      "results": [
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "0b781a906568ea11daf4751d0c37321e83cb3ea5be44f2c2601923b289b3ec094d3dcd6b616e19467d23e1461ebe72f750969f0784d7e201de6e32c02b3b0a68_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 1,
+                  "endLine": 558,
+                  "snippet": {
+                    "text": "    \"node_modules/lodash\": {"
+                  },
+                  "startColumn": 1,
+                  "startLine": 558
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+          },
+          "properties": {
+            "exposure": "unreachable"
+          },
+          "ruleId": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "66ce2a764b85160ce147d4b649617992e852159bf0cd5cddced34a5b9340623937c4c5e931ae999faa96716c0937b1d57104d0675427523c41a1c572fb55f0bc_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 1,
+                  "endLine": 558,
+                  "snippet": {
+                    "text": "    \"node_modules/lodash\": {"
+                  },
+                  "startColumn": 1,
+                  "startLine": 558
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+          },
+          "properties": {
+            "exposure": "unreachable"
+          },
+          "ruleId": "ssc-c6bc1896-7044-4b22-b31a-753d52070423"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "Semgrep PRO",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+              },
+              "help": {
+                "markdown": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423)\n - [https://github.com/advisories/GHSA-35jh-r3h4-6jhm](https://github.com/advisories/GHSA-35jh-r3h4-6jhm)\n - [https://nvd.nist.gov/vuln/detail/CVE-2021-23337](https://nvd.nist.gov/vuln/detail/CVE-2021-23337)\n",
+                "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+              },
+              "helpUri": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "id": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "name": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A01:2017 - Injection",
+                  "OWASP-A03:2021 - Injection",
+                  "OWASP-A06:2021 - Vulnerable and Outdated Components",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: ssc-c6bc1896-7044-4b22-b31a-753d52070423"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+              },
+              "help": {
+                "markdown": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5)\n - [https://github.com/advisories/GHSA-29mw-wpgm-hmr9](https://github.com/advisories/GHSA-29mw-wpgm-hmr9)\n - [https://nvd.nist.gov/vuln/detail/CVE-2020-28500](https://nvd.nist.gov/vuln/detail/CVE-2020-28500)\n",
+                "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+              },
+              "helpUri": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "id": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "name": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-1333: Inefficient Regular Expression Complexity",
+                  "CWE-400: Uncontrolled Resource Consumption",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A06:2021 - Vulnerable and Outdated Components",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5"
+              }
+            }
+          ],
+          "semanticVersion": "1.71.0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

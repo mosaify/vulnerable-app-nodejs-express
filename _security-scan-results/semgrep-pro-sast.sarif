@@ -1,0 +1,858 @@
+{
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/os/schemas/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "toolExecutionNotifications": []
+        }
+      ],
+      "results": [
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from index.js:6 to index.js:6"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: '{\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n}' @ 'index.js:6'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 2,
+                            "endLine": 12,
+                            "message": {
+                              "text": "Source: '{\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n}' @ 'index.js:6'"
+                            },
+                            "snippet": {
+                              "text": "{\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n}"
+                            },
+                            "startColumn": 25,
+                            "startLine": 6
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'var client = new Client({\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n})' @ 'index.js:6'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 2,
+                            "endLine": 12,
+                            "message": {
+                              "text": "Sink: 'var client = new Client({\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n})' @ 'index.js:6'"
+                            },
+                            "snippet": {
+                              "text": "var client = new Client({\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n})"
+                            },
+                            "startColumn": 25,
+                            "startLine": 6
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ed95571d88700807c7a05ed33384a55589f210b1bc4db201388c0228103cc2c407ecaa5dab34f23b76f68d709ecb78a80e16e8416037e90a1ec275af11dd16cc_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 2,
+                  "endLine": 12,
+                  "snippet": {
+                    "text": "var client = new Client({\n  user: \"postgres\",\n  password: \"mysecretpassword\",\n  host: \"localhost\",\n  port: 5432,\n  database: \"postgres\",\n})"
+                  },
+                  "startColumn": 25,
+                  "startLine": 6
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+          },
+          "properties": {},
+          "ruleId": "javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "b99e34bc823d648134e9f945815c4cb093ddb8f4449cba5a0143e65fd6101fc44c411a6beeb05d4f7450130e7f3722a86856e06981b994c4befc3946b4108421_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 22,
+                  "endLine": 30,
+                  "snippet": {
+                    "text": "  var app = express();"
+                  },
+                  "startColumn": 7,
+                  "startLine": 30
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage"
+        },
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from index.js:33 to index.js:33"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: 'req.query' @ 'index.js:33'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 33,
+                            "endLine": 33,
+                            "message": {
+                              "text": "Source: 'req.query' @ 'index.js:33'"
+                            },
+                            "snippet": {
+                              "text": "req.query"
+                            },
+                            "startColumn": 24,
+                            "startLine": 33
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'res.send(`Hello, ${req.query.name}`)' @ 'index.js:33'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 38,
+                            "endLine": 33,
+                            "message": {
+                              "text": "Sink: 'res.send(`Hello, ${req.query.name}`)' @ 'index.js:33'"
+                            },
+                            "snippet": {
+                              "text": "    res.send(`Hello, ${req.query.name}`)"
+                            },
+                            "startColumn": 14,
+                            "startLine": 33
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "e5f1c9ce6ae2ed579490ff8d72743293d36ee07fff07df116186b86fad942176d56656381da0309683fd9c90017de7df26cc419ab92c1bd418d3cdea9bbd847f_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 38,
+                  "endLine": 33,
+                  "snippet": {
+                    "text": "    res.send(`Hello, ${req.query.name}`)"
+                  },
+                  "startColumn": 14,
+                  "startLine": 33
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.xss.direct-response-write.direct-response-write"
+        },
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from index.js:46 to index.js:44"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: 'req.params' @ 'index.js:46'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 61,
+                            "endLine": 46,
+                            "message": {
+                              "text": "Source: 'req.params' @ 'index.js:46'"
+                            },
+                            "snippet": {
+                              "text": "req.params"
+                            },
+                            "startColumn": 51,
+                            "startLine": 46
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'var user = await client.query(`select *\n                                     from users\n                                     where id = ${req.params.id}`)' @ 'index.js:44'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 64,
+                            "endLine": 46,
+                            "message": {
+                              "text": "Sink: 'var user = await client.query(`select *\n                                     from users\n                                     where id = ${req.params.id}`)' @ 'index.js:44'"
+                            },
+                            "snippet": {
+                              "text": "      var user = await client.query(`select *\n                                     from users\n                                     where id = ${req.params.id}`)"
+                            },
+                            "startColumn": 37,
+                            "startLine": 44
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "a87d3f5d263a6c0ec8e25beb33f2b62e7609723b89ae220a27cf1c5c869a573696489f9a738cdb0df2d1fe5cabcc16ef13d8b524e2a8f2ad721a40127a51d370_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 64,
+                  "endLine": 46,
+                  "snippet": {
+                    "text": "      var user = await client.query(`select *\n                                     from users\n                                     where id = ${req.params.id}`)"
+                  },
+                  "startColumn": 37,
+                  "startLine": 44
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Untrusted input might be used to build a database query, which can lead to a SQL injection vulnerability. An attacker can execute malicious SQL statements and gain unauthorized access to sensitive data, modify, delete data, or execute arbitrary system commands. To prevent this vulnerability, use prepared statements that do not concatenate user-controllable strings and use parameterized queries where SQL commands and user data are strictly separated. Also, consider using an object-relational (ORM) framework to operate with safer abstractions."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.pg.express-pg-sqli.express-pg-sqli"
+        },
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from index.js:46 to index.js:46"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: 'req.params' @ 'index.js:46'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 61,
+                            "endLine": 46,
+                            "message": {
+                              "text": "Source: 'req.params' @ 'index.js:46'"
+                            },
+                            "snippet": {
+                              "text": "req.params"
+                            },
+                            "startColumn": 51,
+                            "startLine": 46
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'where id = ${req.params.id}`)' @ 'index.js:46'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 64,
+                            "endLine": 46,
+                            "message": {
+                              "text": "Sink: 'where id = ${req.params.id}`)' @ 'index.js:46'"
+                            },
+                            "snippet": {
+                              "text": "                                     where id = ${req.params.id}`)"
+                            },
+                            "startColumn": 51,
+                            "startLine": 46
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "ca37d46576b2a9de501885f107e02c77dc8a66c409820dc241b2a836458b31a641a0bddf2d529870ceec6b2fa81e06d6737eea945a4d7b92dfd329b1a3555e0f_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 64,
+                  "endLine": 46,
+                  "snippet": {
+                    "text": "                                     where id = ${req.params.id}`)"
+                  },
+                  "startColumn": 51,
+                  "startLine": 46
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+        },
+        {
+          "codeFlows": [
+            {
+              "message": {
+                "text": "Untrusted dataflow from index.js:46 to index.js:47"
+              },
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Source: 'req.params' @ 'index.js:46'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 61,
+                            "endLine": 46,
+                            "message": {
+                              "text": "Source: 'req.params' @ 'index.js:46'"
+                            },
+                            "snippet": {
+                              "text": "req.params"
+                            },
+                            "startColumn": 51,
+                            "startLine": 46
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Propagator : 'user' @ 'index.js:44'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 15,
+                            "endLine": 44,
+                            "message": {
+                              "text": "Propagator : 'user' @ 'index.js:44'"
+                            },
+                            "snippet": {
+                              "text": "user"
+                            },
+                            "startColumn": 11,
+                            "startLine": 44
+                          }
+                        }
+                      },
+                      "nestingLevel": 0
+                    },
+                    {
+                      "location": {
+                        "message": {
+                          "text": "Sink: 'res.send(user.rows[0]);' @ 'index.js:47'"
+                        },
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "index.js"
+                          },
+                          "region": {
+                            "endColumn": 28,
+                            "endLine": 47,
+                            "message": {
+                              "text": "Sink: 'res.send(user.rows[0]);' @ 'index.js:47'"
+                            },
+                            "snippet": {
+                              "text": "      res.send(user.rows[0]);"
+                            },
+                            "startColumn": 16,
+                            "startLine": 47
+                          }
+                        }
+                      },
+                      "nestingLevel": 1
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "fingerprints": {
+            "matchBasedId/v1": "4fb5f6d7f53cb0911a20a44911d367bcd54371f1a134eec8517970dd0f58e2d3b0371748045c9b6856dfa53900282bb709882fb694b59c4d6e0047fbec3bb4d1_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "index.js",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 28,
+                  "endLine": 47,
+                  "snippet": {
+                    "text": "      res.send(user.rows[0]);"
+                  },
+                  "startColumn": 16,
+                  "startLine": 47
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.xss.direct-response-write.direct-response-write"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "0b781a906568ea11daf4751d0c37321e83cb3ea5be44f2c2601923b289b3ec094d3dcd6b616e19467d23e1461ebe72f750969f0784d7e201de6e32c02b3b0a68_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 1,
+                  "endLine": 558,
+                  "snippet": {
+                    "text": "    \"node_modules/lodash\": {"
+                  },
+                  "startColumn": 1,
+                  "startLine": 558
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+          },
+          "properties": {
+            "exposure": "unreachable"
+          },
+          "ruleId": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "66ce2a764b85160ce147d4b649617992e852159bf0cd5cddced34a5b9340623937c4c5e931ae999faa96716c0937b1d57104d0675427523c41a1c572fb55f0bc_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "package-lock.json",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 1,
+                  "endLine": 558,
+                  "snippet": {
+                    "text": "    \"node_modules/lodash\": {"
+                  },
+                  "startColumn": 1,
+                  "startLine": 558
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+          },
+          "properties": {
+            "exposure": "unreachable"
+          },
+          "ruleId": "ssc-c6bc1896-7044-4b22-b31a-753d52070423"
+        },
+        {
+          "fingerprints": {
+            "matchBasedId/v1": "06cc9dd3aee6c39a4c5cddb9ec853c630d451ec15947d96dbd382269688ec9f0a9d02469ed9528fb56173292135d880d01d3085736cd84886ef150c3e96eeff5_0"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "views/hello.pug",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 5,
+                  "snippet": {
+                    "text": "        p!= 'Hello, ' + name"
+                  },
+                  "startColumn": 9,
+                  "startLine": 5
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location."
+          },
+          "properties": {},
+          "ruleId": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "Semgrep PRO",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location."
+              },
+              "help": {
+                "markdown": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape)\n - [https://pugjs.org/language/code.html#unescaped-buffered-code](https://pugjs.org/language/code.html#unescaped-buffered-code)\n - [https://pugjs.org/language/attributes.html#unescaped-attributes](https://pugjs.org/language/attributes.html#unescaped-attributes)\n",
+                "text": "Detected an explicit unescape in a Pug template, using either '!=' or '!{...}'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+              "id": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+              "name": "javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+                  "LOW CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "OWASP-A07:2017 - Cross-Site Scripting (XSS)",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.express.security.audit.xss.pug.explicit-unescape.template-explicit-unescape"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+              },
+              "help": {
+                "markdown": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423)\n - [https://github.com/advisories/GHSA-35jh-r3h4-6jhm](https://github.com/advisories/GHSA-35jh-r3h4-6jhm)\n - [https://nvd.nist.gov/vuln/detail/CVE-2021-23337](https://nvd.nist.gov/vuln/detail/CVE-2021-23337)\n",
+                "text": "lodash versions prior to 4.17.21 (or lodash.template version 4.6.2) are vulnerable to Command Injection via the template function. Please remediate by updating to version 4.17.21 (or 4.6.2). https://github.com/advisories/GHSA-35jh-r3h4-6jhm\n"
+              },
+              "helpUri": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "id": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "name": "ssc-c6bc1896-7044-4b22-b31a-753d52070423",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A01:2017 - Injection",
+                  "OWASP-A03:2021 - Injection",
+                  "OWASP-A06:2021 - Vulnerable and Outdated Components",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: ssc-c6bc1896-7044-4b22-b31a-753d52070423"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+              },
+              "help": {
+                "markdown": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string)\n - [https://owasp.org/www-community/attacks/SQL_Injection](https://owasp.org/www-community/attacks/SQL_Injection)\n",
+                "text": "Detected user input used to manually construct a SQL string. This is usually bad practice because manual construction could accidentally result in a SQL injection. An attacker could use a SQL injection to steal or modify contents of the database. Instead, use a parameterized query which is available by default in most database engines. Alternatively, consider using an object-relational mapper (ORM) such as Sequelize which will protect your queries."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+              "id": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+              "name": "javascript.express.security.injection.tainted-sql-string.tainted-sql-string",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+                  "MEDIUM CONFIDENCE",
+                  "OWASP-A01:2017 - Injection",
+                  "OWASP-A03:2021 - Injection",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.express.security.injection.tainted-sql-string.tainted-sql-string"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Untrusted input might be used to build a database query, which can lead to a SQL injection vulnerability. An attacker can execute malicious SQL statements and gain unauthorized access to sensitive data, modify, delete data, or execute arbitrary system commands. To prevent this vulnerability, use prepared statements that do not concatenate user-controllable strings and use parameterized queries where SQL commands and user data are strictly separated. Also, consider using an object-relational (ORM) framework to operate with safer abstractions."
+              },
+              "help": {
+                "markdown": "Untrusted input might be used to build a database query, which can lead to a SQL injection vulnerability. An attacker can execute malicious SQL statements and gain unauthorized access to sensitive data, modify, delete data, or execute arbitrary system commands. To prevent this vulnerability, use prepared statements that do not concatenate user-controllable strings and use parameterized queries where SQL commands and user data are strictly separated. Also, consider using an object-relational (ORM) framework to operate with safer abstractions.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.express.pg.express-pg-sqli.express-pg-sqli)\n - [https://www.npmjs.com/package/pg](https://www.npmjs.com/package/pg)\n - [https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html)\n",
+                "text": "Untrusted input might be used to build a database query, which can lead to a SQL injection vulnerability. An attacker can execute malicious SQL statements and gain unauthorized access to sensitive data, modify, delete data, or execute arbitrary system commands. To prevent this vulnerability, use prepared statements that do not concatenate user-controllable strings and use parameterized queries where SQL commands and user data are strictly separated. Also, consider using an object-relational (ORM) framework to operate with safer abstractions."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.express.pg.express-pg-sqli.express-pg-sqli",
+              "id": "javascript.express.pg.express-pg-sqli.express-pg-sqli",
+              "name": "javascript.express.pg.express-pg-sqli.express-pg-sqli",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A01:2017 - Injection",
+                  "OWASP-A03:2021 - Injection",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.express.pg.express-pg-sqli.express-pg-sqli"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "fullDescription": {
+                "text": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies."
+              },
+              "help": {
+                "markdown": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage)\n - [https://www.npmjs.com/package/csurf](https://www.npmjs.com/package/csurf)\n - [https://www.npmjs.com/package/csrf](https://www.npmjs.com/package/csrf)\n - [https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html)\n",
+                "text": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+              "id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+              "name": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-352: Cross-Site Request Forgery (CSRF)",
+                  "LOW CONFIDENCE",
+                  "OWASP-A01:2021 - Broken Access Control",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+              },
+              "help": {
+                "markdown": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM).\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret)\n - [https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html)\n",
+                "text": "A secret is hard-coded in the application. Secrets stored in source code, such as credentials, identifiers, and other types of sensitive data, can be leaked and used by internal or external malicious actors. Use environment variables to securely provide credentials and other secrets or retrieve them from a secure vault or Hardware Security Module (HSM)."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+              "id": "javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+              "name": "javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-798: Use of Hard-coded Credentials",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A07:2021 - Identification and Authentication Failures",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.pg.node-pg-hardcoded-secret.node-pg-hardcoded-secret"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML."
+              },
+              "help": {
+                "markdown": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write)\n - [https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)\n",
+                "text": "Detected directly writing to a Response object from user-defined input. This bypasses any HTML escaping and may expose your application to a Cross-Site-scripting (XSS) vulnerability. Instead, use 'resp.render()' to render safely escaped HTML."
+              },
+              "helpUri": "https://semgrep.dev/r/javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "id": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "name": "javascript.express.security.audit.xss.direct-response-write.direct-response-write",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+                  "MEDIUM CONFIDENCE",
+                  "OWASP-A03:2021 - Injection",
+                  "OWASP-A07:2017 - Cross-Site Scripting (XSS)",
+                  "rule-board-audit",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: javascript.express.security.audit.xss.direct-response-write.direct-response-write"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+              },
+              "help": {
+                "markdown": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity.\n\n<b>References:</b>\n - [Semgrep Rule](https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5)\n - [https://github.com/advisories/GHSA-29mw-wpgm-hmr9](https://github.com/advisories/GHSA-29mw-wpgm-hmr9)\n - [https://nvd.nist.gov/vuln/detail/CVE-2020-28500](https://nvd.nist.gov/vuln/detail/CVE-2020-28500)\n",
+                "text": "lodash.trim versions before 4.17.21, lodash.trimend versions before 4.17.21, lodash-es versions before 4.17.21, and lodash versions before 4.17.21 are vulnerable to Uncontrolled Resource Consumption / Inefficient Regular Expression Complexity."
+              },
+              "helpUri": "https://semgrep.dev/orgs/-/supply-chain/advisories?q=ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "id": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "name": "ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5",
+              "properties": {
+                "precision": "very-high",
+                "tags": [
+                  "CWE-1333: Inefficient Regular Expression Complexity",
+                  "CWE-400: Uncontrolled Resource Consumption",
+                  "HIGH CONFIDENCE",
+                  "OWASP-A06:2021 - Vulnerable and Outdated Components",
+                  "security"
+                ]
+              },
+              "shortDescription": {
+                "text": "Semgrep Finding: ssc-2f868719-b27e-40c6-a210-4ffbf4f0c0a5"
+              }
+            }
+          ],
+          "semanticVersion": "1.71.0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

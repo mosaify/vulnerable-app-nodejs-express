@@ -1,0 +1,1157 @@
+{
+ "matches": [
+  {
+   "vulnerability": {
+    "id": "GHSA-qwcr-r2fm-qrc7",
+    "dataSource": "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7",
+    "namespace": "github:language:javascript",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-qwcr-r2fm-qrc7"
+    ],
+    "description": "body-parser vulnerable to denial of service when url encoding is enabled",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 3.9,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.20.3"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-45590",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-45590",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/expressjs/body-parser/commit/b2695c4450f06ba3b0ccf48d872a229bb41c9bce",
+      "https://github.com/expressjs/body-parser/security/advisories/GHSA-qwcr-r2fm-qrc7"
+     ],
+     "description": "body-parser is Node.js body parsing middleware. body-parser <1.20.3 is vulnerable to denial of service when url encoding is enabled. A malicious actor using a specially crafted payload could flood the server with a large number of requests, resulting in denial of service. This issue is patched in 1.20.3.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "body-parser",
+       "version": "1.20.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.20.3 (unknown)",
+      "vulnerabilityID": "GHSA-qwcr-r2fm-qrc7"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "8ba2b341f3d4ee1c",
+    "name": "body-parser",
+    "version": "1.20.2",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:openjsf:body-parser:1.20.2:*:*:*:*:node.js:*:*"
+    ],
+    "purl": "pkg:npm/body-parser@1.20.2",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-pxg6-pf52-xh8x",
+    "dataSource": "https://github.com/advisories/GHSA-pxg6-pf52-xh8x",
+    "namespace": "github:language:javascript",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-pxg6-pf52-xh8x"
+    ],
+    "description": "cookie accepts cookie name, path, and domain with out of bounds characters",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "0.7.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-47764",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-47764",
+     "namespace": "nvd:cpe",
+     "severity": "Unknown",
+     "urls": [
+      "https://github.com/jshttp/cookie/commit/e10042845354fea83bd8f34af72475eed1dadf5c",
+      "https://github.com/jshttp/cookie/pull/167",
+      "https://github.com/jshttp/cookie/security/advisories/GHSA-pxg6-pf52-xh8x"
+     ],
+     "description": "cookie is a basic HTTP cookie parser and serializer for HTTP servers. The cookie name could be used to set other fields of the cookie, resulting in an unexpected cookie value. A similar escape can be used for path and domain, which could be abused to alter other fields of the cookie. Upgrade to 0.7.0, which updates the validation for name, path, and domain.",
+     "cvss": []
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "cookie",
+       "version": "0.6.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<0.7.0 (unknown)",
+      "vulnerabilityID": "GHSA-pxg6-pf52-xh8x"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "9706a1b796f337db",
+    "name": "cookie",
+    "version": "0.6.0",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:cookie:cookie:0.6.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:npm/cookie@0.6.0",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-qw6h-vgh9-j6wx",
+    "dataSource": "https://github.com/advisories/GHSA-qw6h-vgh9-j6wx",
+    "namespace": "github:language:javascript",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-qw6h-vgh9-j6wx"
+    ],
+    "description": "express vulnerable to XSS via response.redirect()",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "metrics": {
+       "baseScore": 5,
+       "exploitabilityScore": 1.6,
+       "impactScore": 3.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "4.20.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-43796",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-43796",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/expressjs/express/commit/54271f69b511fea198471e6ff3400ab805d6b553",
+      "https://github.com/expressjs/express/security/advisories/GHSA-qw6h-vgh9-j6wx"
+     ],
+     "description": "Express.js minimalist web framework for node. In express < 4.20.0, passing untrusted user input - even after sanitizing it - to response.redirect() may execute untrusted code. This issue is patched in express 4.20.0.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1.6,
+        "impactScore": 2.7
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 1.6,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "express",
+       "version": "4.19.2"
+      }
+     },
+     "found": {
+      "versionConstraint": "<4.20.0 (unknown)",
+      "vulnerabilityID": "GHSA-qw6h-vgh9-j6wx"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "37c2f3858746f37e",
+    "name": "express",
+    "version": "4.19.2",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:openjsf:express:4.19.2:*:*:*:*:node.js:*:*"
+    ],
+    "purl": "pkg:npm/express@4.19.2",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-35jh-r3h4-6jhm",
+    "dataSource": "https://github.com/advisories/GHSA-35jh-r3h4-6jhm",
+    "namespace": "github:language:javascript",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-35jh-r3h4-6jhm"
+    ],
+    "description": "Command Injection in lodash",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+      "metrics": {
+       "baseScore": 7.2,
+       "exploitabilityScore": 1.2,
+       "impactScore": 5.9
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "4.17.21"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2021-23337",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2021-23337",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+      "https://github.com/lodash/lodash/blob/ddfd9b11a0126db2302cb70ec9973b66baec0975/lodash.js%23L14851",
+      "https://security.netapp.com/advisory/ntap-20210312-0006/",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074930",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074928",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074929",
+      "https://snyk.io/vuln/SNYK-JS-LODASH-1040724",
+      "https://www.oracle.com//security-alerts/cpujul2021.html",
+      "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+      "https://github.com/lodash/lodash/blob/ddfd9b11a0126db2302cb70ec9973b66baec0975/lodash.js%23L14851",
+      "https://security.netapp.com/advisory/ntap-20210312-0006/",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074932",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074930",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074928",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074931",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074929",
+      "https://snyk.io/vuln/SNYK-JS-LODASH-1040724",
+      "https://www.oracle.com//security-alerts/cpujul2021.html",
+      "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html"
+     ],
+     "description": "Lodash versions prior to 4.17.21 are vulnerable to Command Injection via the template function.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:S/C:P/I:P/A:P",
+       "metrics": {
+        "baseScore": 6.5,
+        "exploitabilityScore": 8,
+        "impactScore": 6.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "report@snyk.io",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.2,
+        "exploitabilityScore": 1.2,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H",
+       "metrics": {
+        "baseScore": 7.2,
+        "exploitabilityScore": 1.2,
+        "impactScore": 5.9
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "lodash",
+       "version": "4.17.20"
+      }
+     },
+     "found": {
+      "versionConstraint": "<4.17.21 (unknown)",
+      "vulnerabilityID": "GHSA-35jh-r3h4-6jhm"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "095328e21fa0e445",
+    "name": "lodash",
+    "version": "4.17.20",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:lodash:lodash:4.17.20:*:*:*:*:node.js:*:*"
+    ],
+    "purl": "pkg:npm/lodash@4.17.20",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-29mw-wpgm-hmr9",
+    "dataSource": "https://github.com/advisories/GHSA-29mw-wpgm-hmr9",
+    "namespace": "github:language:javascript",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-29mw-wpgm-hmr9"
+    ],
+    "description": "Regular Expression Denial of Service (ReDoS) in lodash",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+      "metrics": {
+       "baseScore": 5.3,
+       "exploitabilityScore": 3.9,
+       "impactScore": 1.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "4.17.21"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2020-28500",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2020-28500",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+      "https://github.com/lodash/lodash/blob/npm/trimEnd.js%23L8",
+      "https://github.com/lodash/lodash/pull/5065",
+      "https://security.netapp.com/advisory/ntap-20210312-0006/",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074896",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074894",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074892",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074895",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074893",
+      "https://snyk.io/vuln/SNYK-JS-LODASH-1018905",
+      "https://www.oracle.com//security-alerts/cpujul2021.html",
+      "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html",
+      "https://cert-portal.siemens.com/productcert/pdf/ssa-637483.pdf",
+      "https://github.com/lodash/lodash/blob/npm/trimEnd.js%23L8",
+      "https://github.com/lodash/lodash/pull/5065",
+      "https://security.netapp.com/advisory/ntap-20210312-0006/",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGFUJIONWEBJARS-1074896",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARS-1074894",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWER-1074892",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSBOWERGITHUBLODASH-1074895",
+      "https://snyk.io/vuln/SNYK-JAVA-ORGWEBJARSNPM-1074893",
+      "https://snyk.io/vuln/SNYK-JS-LODASH-1018905",
+      "https://www.oracle.com//security-alerts/cpujul2021.html",
+      "https://www.oracle.com/security-alerts/cpujan2022.html",
+      "https://www.oracle.com/security-alerts/cpujul2022.html",
+      "https://www.oracle.com/security-alerts/cpuoct2021.html"
+     ],
+     "description": "Lodash versions prior to 4.17.21 are vulnerable to Regular Expression Denial of Service (ReDoS) via the toNumber, trim and trimEnd functions.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "2.0",
+       "vector": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 10,
+        "impactScore": 2.9
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "report@snyk.io",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+       "metrics": {
+        "baseScore": 5.3,
+        "exploitabilityScore": 3.9,
+        "impactScore": 1.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "lodash",
+       "version": "4.17.20"
+      }
+     },
+     "found": {
+      "versionConstraint": "<4.17.21 (unknown)",
+      "vulnerabilityID": "GHSA-29mw-wpgm-hmr9"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "095328e21fa0e445",
+    "name": "lodash",
+    "version": "4.17.20",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:lodash:lodash:4.17.20:*:*:*:*:node.js:*:*"
+    ],
+    "purl": "pkg:npm/lodash@4.17.20",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-9wv6-86v2-598j",
+    "dataSource": "https://github.com/advisories/GHSA-9wv6-86v2-598j",
+    "namespace": "github:language:javascript",
+    "severity": "High",
+    "urls": [
+     "https://github.com/advisories/GHSA-9wv6-86v2-598j"
+    ],
+    "description": "path-to-regexp outputs backtracking regular expressions",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+      "metrics": {
+       "baseScore": 7.5,
+       "exploitabilityScore": 3.9,
+       "impactScore": 3.6
+      },
+      "vendorMetadata": {
+       "base_severity": "High",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "0.1.10"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-45296",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-45296",
+     "namespace": "nvd:cpe",
+     "severity": "High",
+     "urls": [
+      "https://github.com/pillarjs/path-to-regexp/commit/29b96b4a1de52824e1ca0f49a701183cc4ed476f",
+      "https://github.com/pillarjs/path-to-regexp/commit/60f2121e9b66b7b622cc01080df0aabda9eedee6",
+      "https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-9wv6-86v2-598j"
+     ],
+     "description": "path-to-regexp turns path strings into a regular expressions. In certain cases, path-to-regexp will output a regular expression that can be exploited to cause poor performance. Because JavaScript is single threaded and regex matching runs on the main thread, poor performance will block the event loop and lead to a DoS. The bad regular expression is generated any time you have two parameters within a single segment, separated by something that is not a period (.). For users of 0.1, upgrade to 0.1.10. All other users should upgrade to 8.0.0.",
+     "cvss": [
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+       "metrics": {
+        "baseScore": 7.5,
+        "exploitabilityScore": 3.9,
+        "impactScore": 3.6
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "path-to-regexp",
+       "version": "0.1.7"
+      }
+     },
+     "found": {
+      "versionConstraint": "<0.1.10 (unknown)",
+      "vulnerabilityID": "GHSA-9wv6-86v2-598j"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "ee6e2b2e3ed78e49",
+    "name": "path-to-regexp",
+    "version": "0.1.7",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:path-to-regexp:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to-regexp:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to_regexp:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to_regexp:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path:path_to_regexp:0.1.7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:npm/path-to-regexp@0.1.7",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-rhx6-c78j-4q9w",
+    "dataSource": "https://github.com/advisories/GHSA-rhx6-c78j-4q9w",
+    "namespace": "github:language:javascript",
+    "severity": "Medium",
+    "urls": [
+     "https://github.com/advisories/GHSA-rhx6-c78j-4q9w"
+    ],
+    "description": "Unpatched `path-to-regexp` ReDoS in 0.1.x",
+    "cvss": [],
+    "fix": {
+     "versions": [
+      "0.1.12"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-52798",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-52798",
+     "namespace": "nvd:cpe",
+     "severity": "Unknown",
+     "urls": [
+      "https://github.com/pillarjs/path-to-regexp/commit/f01c26a013b1889f0c217c643964513acf17f6a4",
+      "https://github.com/pillarjs/path-to-regexp/security/advisories/GHSA-rhx6-c78j-4q9w"
+     ],
+     "description": "path-to-regexp turns path strings into a regular expressions. In certain cases, path-to-regexp will output a regular expression that can be exploited to cause poor performance. The regular expression that is vulnerable to backtracking can be generated in the 0.1.x release of path-to-regexp. Upgrade to 0.1.12. This vulnerability exists because of an incomplete fix for CVE-2024-45296.",
+     "cvss": []
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "path-to-regexp",
+       "version": "0.1.7"
+      }
+     },
+     "found": {
+      "versionConstraint": "<0.1.12 (unknown)",
+      "vulnerabilityID": "GHSA-rhx6-c78j-4q9w"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "ee6e2b2e3ed78e49",
+    "name": "path-to-regexp",
+    "version": "0.1.7",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:path-to-regexp:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to-regexp:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to_regexp:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to_regexp:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path-to:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path_to:path_to_regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path:path-to-regexp:0.1.7:*:*:*:*:*:*:*",
+     "cpe:2.3:a:path:path_to_regexp:0.1.7:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:npm/path-to-regexp@0.1.7",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-m6fv-jmcg-4jfg",
+    "dataSource": "https://github.com/advisories/GHSA-m6fv-jmcg-4jfg",
+    "namespace": "github:language:javascript",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-m6fv-jmcg-4jfg"
+    ],
+    "description": "send vulnerable to template injection that can lead to XSS",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "metrics": {
+       "baseScore": 5,
+       "exploitabilityScore": 1.6,
+       "impactScore": 3.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "0.19.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-43799",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-43799",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/pillarjs/send/commit/ae4f2989491b392ae2ef3b0015a019770ae65d35",
+      "https://github.com/pillarjs/send/security/advisories/GHSA-m6fv-jmcg-4jfg"
+     ],
+     "description": "Send is a library for streaming files from the file system as a http response. Send passes untrusted user input to SendStream.redirect() which executes untrusted code. This issue is patched in send 0.19.0.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1.6,
+        "impactScore": 2.7
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 1.6,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "send",
+       "version": "0.18.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<0.19.0 (unknown)",
+      "vulnerabilityID": "GHSA-m6fv-jmcg-4jfg"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "48f157f5579b7157",
+    "name": "send",
+    "version": "0.18.0",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:send_project:send:0.18.0:*:*:*:*:node.js:*:*"
+    ],
+    "purl": "pkg:npm/send@0.18.0",
+    "upstreams": []
+   }
+  },
+  {
+   "vulnerability": {
+    "id": "GHSA-cm22-4g7w-348p",
+    "dataSource": "https://github.com/advisories/GHSA-cm22-4g7w-348p",
+    "namespace": "github:language:javascript",
+    "severity": "Low",
+    "urls": [
+     "https://github.com/advisories/GHSA-cm22-4g7w-348p"
+    ],
+    "description": "serve-static vulnerable to template injection that can lead to XSS",
+    "cvss": [
+     {
+      "version": "3.1",
+      "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+      "metrics": {
+       "baseScore": 5,
+       "exploitabilityScore": 1.6,
+       "impactScore": 3.4
+      },
+      "vendorMetadata": {
+       "base_severity": "Medium",
+       "status": "N/A"
+      }
+     }
+    ],
+    "fix": {
+     "versions": [
+      "1.16.0"
+     ],
+     "state": "fixed"
+    },
+    "advisories": []
+   },
+   "relatedVulnerabilities": [
+    {
+     "id": "CVE-2024-43800",
+     "dataSource": "https://nvd.nist.gov/vuln/detail/CVE-2024-43800",
+     "namespace": "nvd:cpe",
+     "severity": "Medium",
+     "urls": [
+      "https://github.com/expressjs/serve-static/commit/0c11fad159898cdc69fd9ab63269b72468ecaf6b",
+      "https://github.com/expressjs/serve-static/commit/ce730896fddce1588111d9ef6fdf20896de5c6fa",
+      "https://github.com/expressjs/serve-static/security/advisories/GHSA-cm22-4g7w-348p"
+     ],
+     "description": "serve-static serves static files. serve-static passes untrusted user input - even after sanitizing it - to redirect() may execute untrusted code. This issue is patched in serve-static 1.16.0.",
+     "cvss": [
+      {
+       "source": "nvd@nist.gov",
+       "type": "Primary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N",
+       "metrics": {
+        "baseScore": 4.7,
+        "exploitabilityScore": 1.6,
+        "impactScore": 2.7
+       },
+       "vendorMetadata": {}
+      },
+      {
+       "source": "security-advisories@github.com",
+       "type": "Secondary",
+       "version": "3.1",
+       "vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:L",
+       "metrics": {
+        "baseScore": 5,
+        "exploitabilityScore": 1.6,
+        "impactScore": 3.4
+       },
+       "vendorMetadata": {}
+      }
+     ]
+    }
+   ],
+   "matchDetails": [
+    {
+     "type": "exact-direct-match",
+     "matcher": "javascript-matcher",
+     "searchedBy": {
+      "language": "javascript",
+      "namespace": "github:language:javascript",
+      "package": {
+       "name": "serve-static",
+       "version": "1.15.0"
+      }
+     },
+     "found": {
+      "versionConstraint": "<1.16.0 (unknown)",
+      "vulnerabilityID": "GHSA-cm22-4g7w-348p"
+     }
+    }
+   ],
+   "artifact": {
+    "id": "d2729b400cd54fd9",
+    "name": "serve-static",
+    "version": "1.15.0",
+    "type": "npm",
+    "locations": [
+     {
+      "path": "\\package-lock.json"
+     }
+    ],
+    "language": "javascript",
+    "licenses": [],
+    "cpes": [
+     "cpe:2.3:a:serve-static:serve-static:1.15.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:serve-static:serve_static:1.15.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:serve_static:serve-static:1.15.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:serve_static:serve_static:1.15.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:serve:serve-static:1.15.0:*:*:*:*:*:*:*",
+     "cpe:2.3:a:serve:serve_static:1.15.0:*:*:*:*:*:*:*"
+    ],
+    "purl": "pkg:npm/serve-static@1.15.0",
+    "upstreams": []
+   }
+  }
+ ],
+ "source": {
+  "type": "directory",
+  "target": "."
+ },
+ "distro": {
+  "name": "",
+  "version": "",
+  "idLike": null
+ },
+ "descriptor": {
+  "name": "grype",
+  "version": "0.86.1",
+  "configuration": {
+   "output": [
+    "json"
+   ],
+   "file": "grype.json",
+   "distro": "",
+   "add-cpes-if-none": false,
+   "output-template-file": "",
+   "check-for-app-update": true,
+   "only-fixed": false,
+   "only-notfixed": false,
+   "ignore-wontfix": "",
+   "platform": "",
+   "search": {
+    "scope": "squashed",
+    "unindexed-archives": false,
+    "indexed-archives": true
+   },
+   "ignore": [
+    {
+     "vulnerability": "",
+     "reason": "",
+     "namespace": "",
+     "fix-state": "",
+     "package": {
+      "name": "kernel-headers",
+      "version": "",
+      "language": "",
+      "type": "rpm",
+      "location": "",
+      "upstream-name": "kernel"
+     },
+     "vex-status": "",
+     "vex-justification": "",
+     "match-type": "exact-indirect-match"
+    },
+    {
+     "vulnerability": "",
+     "reason": "",
+     "namespace": "",
+     "fix-state": "",
+     "package": {
+      "name": "linux-.*-headers-.*",
+      "version": "",
+      "language": "",
+      "type": "deb",
+      "location": "",
+      "upstream-name": "linux"
+     },
+     "vex-status": "",
+     "vex-justification": "",
+     "match-type": "exact-indirect-match"
+    },
+    {
+     "vulnerability": "",
+     "reason": "",
+     "namespace": "",
+     "fix-state": "",
+     "package": {
+      "name": "linux-libc-dev",
+      "version": "",
+      "language": "",
+      "type": "deb",
+      "location": "",
+      "upstream-name": "linux"
+     },
+     "vex-status": "",
+     "vex-justification": "",
+     "match-type": "exact-indirect-match"
+    }
+   ],
+   "exclude": [],
+   "db": {
+    "cache-dir": "C:\\Users\\msamo\\AppData\\Local\\cache/grype/db",
+    "update-url": "https://toolbox-data.anchore.io/grype/databases/listing.json",
+    "ca-cert": "",
+    "auto-update": true,
+    "validate-by-hash-on-start": false,
+    "validate-age": true,
+    "max-allowed-built-age": 432000000000000,
+    "require-update-check": false,
+    "update-available-timeout": 30000000000,
+    "update-download-timeout": 300000000000,
+    "max-update-check-frequency": 7200000000000
+   },
+   "externalSources": {
+    "enable": false,
+    "maven": {
+     "searchUpstreamBySha1": true,
+     "baseUrl": "https://search.maven.org/solrsearch/select"
+    }
+   },
+   "match": {
+    "java": {
+     "using-cpes": false
+    },
+    "jvm": {
+     "using-cpes": true
+    },
+    "dotnet": {
+     "using-cpes": false
+    },
+    "golang": {
+     "using-cpes": false,
+     "always-use-cpe-for-stdlib": true,
+     "allow-main-module-pseudo-version-comparison": false
+    },
+    "javascript": {
+     "using-cpes": false
+    },
+    "python": {
+     "using-cpes": false
+    },
+    "ruby": {
+     "using-cpes": false
+    },
+    "rust": {
+     "using-cpes": false
+    },
+    "stock": {
+     "using-cpes": true
+    }
+   },
+   "fail-on-severity": "",
+   "registry": {
+    "insecure-skip-tls-verify": false,
+    "insecure-use-http": false,
+    "auth": null,
+    "ca-cert": ""
+   },
+   "show-suppressed": false,
+   "by-cve": false,
+   "name": "",
+   "default-image-pull-source": "",
+   "vex-documents": [],
+   "vex-add": [],
+   "match-upstream-kernel-headers": false,
+   "exp": {
+    "dbv6": false
+   }
+  },
+  "db": {
+   "built": "2024-12-22T01:31:12Z",
+   "schemaVersion": 5,
+   "location": "C:\\Users\\msamo\\AppData\\Local\\cache/grype/db/5",
+   "checksum": "sha256:792469cfb23c20bb2ac8143385496c995c0c49e3fd77b5ad59034ee6c9872573",
+   "error": null
+  },
+  "timestamp": "2024-12-22T10:10:44.3256982-05:00"
+ }
+}

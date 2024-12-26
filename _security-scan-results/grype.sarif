@@ -1,0 +1,424 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://docs.oasis-open.org/sarif/sarif/v2.1.0/errata01/os/schemas/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "grype",
+          "version": "0.86.1",
+          "informationUri": "https://github.com/anchore/grype",
+          "rules": [
+            {
+              "id": "GHSA-29mw-wpgm-hmr9-lodash",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-29mw-wpgm-hmr9 medium vulnerability for lodash package"
+              },
+              "fullDescription": {
+                "text": "Regular Expression Denial of Service (ReDoS) in lodash"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-29mw-wpgm-hmr9\nSeverity: medium\nPackage: lodash\nVersion: 4.17.20\nFix Version: 4.17.21\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-29mw-wpgm-hmr9](https://github.com/advisories/GHSA-29mw-wpgm-hmr9)",
+                "markdown": "**Vulnerability GHSA-29mw-wpgm-hmr9**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | lodash  | 4.17.20  | 4.17.21  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-29mw-wpgm-hmr9](https://github.com/advisories/GHSA-29mw-wpgm-hmr9)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/lodash@4.17.20"
+                ],
+                "security-severity": "5.3"
+              }
+            },
+            {
+              "id": "GHSA-35jh-r3h4-6jhm-lodash",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-35jh-r3h4-6jhm high vulnerability for lodash package"
+              },
+              "fullDescription": {
+                "text": "Command Injection in lodash"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-35jh-r3h4-6jhm\nSeverity: high\nPackage: lodash\nVersion: 4.17.20\nFix Version: 4.17.21\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-35jh-r3h4-6jhm](https://github.com/advisories/GHSA-35jh-r3h4-6jhm)",
+                "markdown": "**Vulnerability GHSA-35jh-r3h4-6jhm**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | lodash  | 4.17.20  | 4.17.21  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-35jh-r3h4-6jhm](https://github.com/advisories/GHSA-35jh-r3h4-6jhm)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/lodash@4.17.20"
+                ],
+                "security-severity": "7.2"
+              }
+            },
+            {
+              "id": "GHSA-9wv6-86v2-598j-path-to-regexp",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-9wv6-86v2-598j high vulnerability for path-to-regexp package"
+              },
+              "fullDescription": {
+                "text": "path-to-regexp outputs backtracking regular expressions"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-9wv6-86v2-598j\nSeverity: high\nPackage: path-to-regexp\nVersion: 0.1.7\nFix Version: 0.1.10\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-9wv6-86v2-598j](https://github.com/advisories/GHSA-9wv6-86v2-598j)",
+                "markdown": "**Vulnerability GHSA-9wv6-86v2-598j**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | path-to-regexp  | 0.1.7  | 0.1.10  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-9wv6-86v2-598j](https://github.com/advisories/GHSA-9wv6-86v2-598j)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/path-to-regexp@0.1.7"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "GHSA-cm22-4g7w-348p-serve-static",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-cm22-4g7w-348p low vulnerability for serve-static package"
+              },
+              "fullDescription": {
+                "text": "serve-static vulnerable to template injection that can lead to XSS"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-cm22-4g7w-348p\nSeverity: low\nPackage: serve-static\nVersion: 1.15.0\nFix Version: 1.16.0\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-cm22-4g7w-348p](https://github.com/advisories/GHSA-cm22-4g7w-348p)",
+                "markdown": "**Vulnerability GHSA-cm22-4g7w-348p**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | serve-static  | 1.15.0  | 1.16.0  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-cm22-4g7w-348p](https://github.com/advisories/GHSA-cm22-4g7w-348p)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/serve-static@1.15.0"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "GHSA-m6fv-jmcg-4jfg-send",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-m6fv-jmcg-4jfg low vulnerability for send package"
+              },
+              "fullDescription": {
+                "text": "send vulnerable to template injection that can lead to XSS"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-m6fv-jmcg-4jfg\nSeverity: low\nPackage: send\nVersion: 0.18.0\nFix Version: 0.19.0\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-m6fv-jmcg-4jfg](https://github.com/advisories/GHSA-m6fv-jmcg-4jfg)",
+                "markdown": "**Vulnerability GHSA-m6fv-jmcg-4jfg**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | send  | 0.18.0  | 0.19.0  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-m6fv-jmcg-4jfg](https://github.com/advisories/GHSA-m6fv-jmcg-4jfg)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/send@0.18.0"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "GHSA-pxg6-pf52-xh8x-cookie",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-pxg6-pf52-xh8x low vulnerability for cookie package"
+              },
+              "fullDescription": {
+                "text": "cookie accepts cookie name, path, and domain with out of bounds characters"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-pxg6-pf52-xh8x\nSeverity: low\nPackage: cookie\nVersion: 0.6.0\nFix Version: 0.7.0\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-pxg6-pf52-xh8x](https://github.com/advisories/GHSA-pxg6-pf52-xh8x)",
+                "markdown": "**Vulnerability GHSA-pxg6-pf52-xh8x**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | cookie  | 0.6.0  | 0.7.0  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-pxg6-pf52-xh8x](https://github.com/advisories/GHSA-pxg6-pf52-xh8x)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/cookie@0.6.0"
+                ],
+                "security-severity": "1.0"
+              }
+            },
+            {
+              "id": "GHSA-qw6h-vgh9-j6wx-express",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-qw6h-vgh9-j6wx low vulnerability for express package"
+              },
+              "fullDescription": {
+                "text": "express vulnerable to XSS via response.redirect()"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-qw6h-vgh9-j6wx\nSeverity: low\nPackage: express\nVersion: 4.19.2\nFix Version: 4.20.0\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-qw6h-vgh9-j6wx](https://github.com/advisories/GHSA-qw6h-vgh9-j6wx)",
+                "markdown": "**Vulnerability GHSA-qw6h-vgh9-j6wx**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| low  | express  | 4.19.2  | 4.20.0  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-qw6h-vgh9-j6wx](https://github.com/advisories/GHSA-qw6h-vgh9-j6wx)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/express@4.19.2"
+                ],
+                "security-severity": "5.0"
+              }
+            },
+            {
+              "id": "GHSA-qwcr-r2fm-qrc7-body-parser",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-qwcr-r2fm-qrc7 high vulnerability for body-parser package"
+              },
+              "fullDescription": {
+                "text": "body-parser vulnerable to denial of service when url encoding is enabled"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-qwcr-r2fm-qrc7\nSeverity: high\nPackage: body-parser\nVersion: 1.20.2\nFix Version: 1.20.3\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-qwcr-r2fm-qrc7](https://github.com/advisories/GHSA-qwcr-r2fm-qrc7)",
+                "markdown": "**Vulnerability GHSA-qwcr-r2fm-qrc7**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| high  | body-parser  | 1.20.2  | 1.20.3  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-qwcr-r2fm-qrc7](https://github.com/advisories/GHSA-qwcr-r2fm-qrc7)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/body-parser@1.20.2"
+                ],
+                "security-severity": "7.5"
+              }
+            },
+            {
+              "id": "GHSA-rhx6-c78j-4q9w-path-to-regexp",
+              "name": "JavascriptMatcherExactDirectMatch",
+              "shortDescription": {
+                "text": "GHSA-rhx6-c78j-4q9w medium vulnerability for path-to-regexp package"
+              },
+              "fullDescription": {
+                "text": "Unpatched `path-to-regexp` ReDoS in 0.1.x"
+              },
+              "helpUri": "https://github.com/anchore/grype",
+              "help": {
+                "text": "Vulnerability GHSA-rhx6-c78j-4q9w\nSeverity: medium\nPackage: path-to-regexp\nVersion: 0.1.7\nFix Version: 0.1.12\nType: npm\nLocation: \\package-lock.json\nData Namespace: github:language:javascript\nLink: [GHSA-rhx6-c78j-4q9w](https://github.com/advisories/GHSA-rhx6-c78j-4q9w)",
+                "markdown": "**Vulnerability GHSA-rhx6-c78j-4q9w**\n| Severity | Package | Version | Fix Version | Type | Location | Data Namespace | Link |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| medium  | path-to-regexp  | 0.1.7  | 0.1.12  | npm  | \\package-lock.json  | github:language:javascript  | [GHSA-rhx6-c78j-4q9w](https://github.com/advisories/GHSA-rhx6-c78j-4q9w)  |\n"
+              },
+              "properties": {
+                "purls": [
+                  "pkg:npm/path-to-regexp@0.1.7"
+                ],
+                "security-severity": "4.0"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "GHSA-29mw-wpgm-hmr9-lodash",
+          "message": {
+            "text": "A medium vulnerability in npm package: lodash, version 4.17.20 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "80140500e1e260819cfdb086355b31b8df9a317e64b2cf6d7bd150d7de107aa2:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-35jh-r3h4-6jhm-lodash",
+          "message": {
+            "text": "A high vulnerability in npm package: lodash, version 4.17.20 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "80140500e1e260819cfdb086355b31b8df9a317e64b2cf6d7bd150d7de107aa2:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-9wv6-86v2-598j-path-to-regexp",
+          "message": {
+            "text": "A high vulnerability in npm package: path-to-regexp, version 0.1.7 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "14578400547225b49ee8683719063e7b348087a3078a4995de3ed9a4f0ac4bd7:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-cm22-4g7w-348p-serve-static",
+          "message": {
+            "text": "A low vulnerability in npm package: serve-static, version 1.15.0 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "fac24acd0c664a7d1ac190f77e6b882af446fa1613c783d3d581e67165f10dea:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-m6fv-jmcg-4jfg-send",
+          "message": {
+            "text": "A low vulnerability in npm package: send, version 0.18.0 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "c99ff91bb58ca167f8f8a5d87f1246bc57dfdacec6d796c2ee564485bfe6257e:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-pxg6-pf52-xh8x-cookie",
+          "message": {
+            "text": "A low vulnerability in npm package: cookie, version 0.6.0 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "badc6cd856b4f6d804da78cc2f86e7a9b4ea3802887714396252a0e18038e5e2:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-qw6h-vgh9-j6wx-express",
+          "message": {
+            "text": "A low vulnerability in npm package: express, version 4.19.2 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "5dd852936caa3497b4daa762d4b9f254575fbf11250a8d3fa3b04b6b8f8fb59b:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-qwcr-r2fm-qrc7-body-parser",
+          "message": {
+            "text": "A high vulnerability in npm package: body-parser, version 1.20.2 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "ddb36b60b41fc92b92f34c123fa22a1390654ed09841992970f64b6f71ab5268:1"
+          }
+        },
+        {
+          "ruleId": "GHSA-rhx6-c78j-4q9w-path-to-regexp",
+          "message": {
+            "text": "A medium vulnerability in npm package: path-to-regexp, version 0.1.7 was found at: \\package-lock.json"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "\\package-lock.json"
+                },
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 1
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "14578400547225b49ee8683719063e7b348087a3078a4995de3ed9a4f0ac4bd7:1"
+          }
+        }
+      ]
+    }
+  ]
+}
